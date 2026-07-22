@@ -1,78 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webex Live Chat Demo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-        }
+<title>Webex Contact Center Demo</title>
 
-        #loginScreen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<style>
 
-        .loginBox {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            width: 320px;
-            box-shadow: 0 3px 12px rgba(0,0,0,.2);
-            text-align: center;
-        }
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+}
 
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 15px 0;
-            box-sizing: border-box;
-        }
+#loginScreen{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
 
-        button {
-            width: 100%;
-            padding: 10px;
-            cursor: pointer;
-        }
+.loginBox{
+    background:white;
+    width:320px;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
 
-        #mainContent {
-            display: none;
-            padding: 40px;
-        }
+input{
+    width:100%;
+    padding:10px;
+    margin:15px 0;
+    box-sizing:border-box;
+}
 
-        .error {
-            color: red;
-            margin-top: 10px;
-        }
-    </style>
+button{
+    width:100%;
+    padding:10px;
+}
+
+#error{
+    color:red;
+    margin-top:10px;
+}
+
+#mainContent{
+    display:none;
+    padding:40px;
+}
+
+</style>
+
 </head>
 
 <body>
 
 <div id="loginScreen">
+
     <div class="loginBox">
+
         <h2>Demo Access</h2>
+
         <p>Please enter the password.</p>
 
         <input
-            type="password"
             id="password"
+            type="password"
             placeholder="Password"
-            onkeydown="if(event.key==='Enter') checkPassword();">
+            onkeydown="if(event.key==='Enter')checkPassword();">
 
         <button onclick="checkPassword()">
             Enter
         </button>
 
-        <div class="error" id="error"></div>
+        <div id="error"></div>
+
     </div>
+
 </div>
+
 
 <div id="mainContent">
 
@@ -82,36 +90,37 @@
         Welcome to the demo site.
     </p>
 
-    <!-- Your normal page content goes here -->
+    <!-- ==================================================== -->
+    <!--   PASTE THE COMPLETE CISCO WIDGET BELOW THIS LINE     -->
+    <!-- ==================================================== -->
 
-    <div id="divicw"
-         data-bind="XXXXXX-XXXXX-XXXX"
-         data-org=""
-         data-guid="YYYY-YYYYYY-YYYYYY">
-    </div>
+<div id="divicw" data-bind="D1DCE870-5692-4C0D-9E39-B496DA80EB9A" data-org="" data-guid="e038ef2c-c768-468c-b515-7396d37b56ed"></div><script>var i={t:function(){try{var e=document.getElementById("divicw"),t=document.createElement("script");t.src="https://media.imi.chat/widget/js/imichatinit.js?t="+new Date().toISOString(),e.insertAdjacentElement("afterend",t),t.addEventListener("load",function(){console.log(new Date().toISOString(),"Livechat script loaded successfully!")}),t.addEventListener("error",function(){console.log(new Date().toISOString(),"Error loading Livechat script");i.o(e)})}catch(e){console.error(e)}},o:function(e){e.insertAdjacentHTML("afterend",'<iframe id="tls_al_frm" frameborder="0" style="overflow:hidden;height:208px;width:394px;position:fixed;display:block;right:48px;bottom:12px;z-index:99999;display:none;"></iframe>');var t=document.getElementById("tls_al_frm"),n=t.contentWindow,d=n.document;d.open();d.write("<!doctype html><html><head><meta charset='utf-8'><title>Untitled Document</title><style>body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#99a0b0;font-size:14px}.popover__content{background-color:#fbfbfe;padding:1.5rem;border-radius:5px;width:300px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.26);position:relative}.popover__message{font-weight:600;color:#56627c;font-size:16px}.pull-left{float:left}.clearfix{clear:both}.hdr-txt{width:218px;margin-top:3px}.para-txt a{text-decoration:none;color:#005cde}.close-btn{position:absolute;right:15px;top:15px}.close-btn a{text-decoration:none;font-weight:400;color:#56627c;font-size:16px}</style></head><body><div class='popover__content'><div class='close-btn'><a href='#' onclick='closeTLSAlert()'>X</a></div><div class='popover__message'><div class='pull-left hdr-txt'>This browser version is not supported on LiveChat.</div></div><div class='clearfix'></div><p class='para-txt'>Please update your browser to the latest version and re-open the website to access the widget.</p></div><script>function closeTLSAlert(){window.parent.postMessage({key:'close_tls_alert',value:'close_tls_alert',action:'close_tls_alert'},'*');}<\/script></body></html>");d.close();t.style.display='block';window.addEventListener('message',function(e){'close_tls_alert'===e.data.action&&i.s()})},s:function(){var e=document.getElementById('tls_al_frm');e&&e.remove()}};i.t();</script>
 
-    <script>
-        <div id="divicw" data-bind="D1DCE870-5692-4C0D-9E39-B496DA80EB9A" data-org="" data-guid="e038ef2c-c768-468c-b515-7396d37b56ed"></div><script>var i={t:function(){try{var e=document.getElementById("divicw"),t=document.createElement("script");t.src="https://media.imi.chat/widget/js/imichatinit.js?t="+new Date().toISOString(),e.insertAdjacentElement("afterend",t),t.addEventListener("load",function(){console.log(new Date().toISOString(),"Livechat script loaded successfully!")}),t.addEventListener("error",function(){console.log(new Date().toISOString(),"Error loading Livechat script");i.o(e)})}catch(e){console.error(e)}},o:function(e){e.insertAdjacentHTML("afterend",'<iframe id="tls_al_frm" frameborder="0" style="overflow:hidden;height:208px;width:394px;position:fixed;display:block;right:48px;bottom:12px;z-index:99999;display:none;"></iframe>');var t=document.getElementById("tls_al_frm"),n=t.contentWindow,d=n.document;d.open();d.write("<!doctype html><html><head><meta charset='utf-8'><title>Untitled Document</title><style>body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#99a0b0;font-size:14px}.popover__content{background-color:#fbfbfe;padding:1.5rem;border-radius:5px;width:300px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.26);position:relative}.popover__message{font-weight:600;color:#56627c;font-size:16px}.pull-left{float:left}.clearfix{clear:both}.hdr-txt{width:218px;margin-top:3px}.para-txt a{text-decoration:none;color:#005cde}.close-btn{position:absolute;right:15px;top:15px}.close-btn a{text-decoration:none;font-weight:400;color:#56627c;font-size:16px}</style></head><body><div class='popover__content'><div class='close-btn'><a href='#' onclick='closeTLSAlert()'>X</a></div><div class='popover__message'><div class='pull-left hdr-txt'>This browser version is not supported on LiveChat.</div></div><div class='clearfix'></div><p class='para-txt'>Please update your browser to the latest version and re-open the website to access the widget.</p></div><script>function closeTLSAlert(){window.parent.postMessage({key:'close_tls_alert',value:'close_tls_alert',action:'close_tls_alert'},'*');}<\/script></body></html>");d.close();t.style.display='block';window.addEventListener('message',function(e){'close_tls_alert'===e.data.action&&i.s()})},s:function(){var e=document.getElementById('tls_al_frm');e&&e.remove()}};i.t();</script>    </script>
-        </div>
+    <!-- ==================================================== -->
+    <!--   END OF CISCO WIDGET                                -->
+    <!-- ==================================================== -->
 
-    <script>
+</div>
 
-const PASSWORD = "Demo123!";
 
-function checkPassword() {
+<script>
 
-    const entered = document.getElementById("password").value;
+const PASSWORD="Demo123!";
 
-    if (entered === PASSWORD) {
+function checkPassword(){
 
-        document.getElementById("loginScreen").style.display = "none";
-        document.getElementById("mainContent").style.display = "block";
+    if(document.getElementById("password").value===PASSWORD){
 
-    } else {
-
-        document.getElementById("error").innerText = "Incorrect password.";
+        document.getElementById("loginScreen").style.display="none";
+        document.getElementById("mainContent").style.display="block";
 
     }
+    else{
+
+        document.getElementById("error").innerHTML="Incorrect password.";
+
+    }
+
 }
 
 </script>
