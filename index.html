@@ -2,123 +2,160 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Webex Contact Center Demo</title>
-
 <style>
-
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #000;
+    background: #f5f5f5;
 }
-
-#loginScreen{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+    
+/* ===========================
+   LOGIN SCREEN
+=========================== */
+    
+#loginScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #eeeeee;
 }
-
-.loginBox{
-    background:white;
-    width:320px;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 2px 10px rgba(0,0,0,.2);
+.loginBox {
+    background: white;
+    width: 340px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.25);
+    text-align: center;
 }
-
-input{
+.loginBox input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    font-size: 16px;
+}
+.loginBox button {
     width:100%;
-    padding:10px;
-    margin:15px 0;
-    box-sizing:border-box;
+    padding:12px;
+    font-size:16px;
+    cursor:pointer;
 }
-
-button{
-    width:100%;
-    padding:10px;
-}
-
-#error{
+#error {
     color:red;
-    margin-top:10px;
+    margin-top:15px;
 }
-
+    
+/* ===========================
+   MAIN DEMO PAGE
+=========================== */
+    
 #mainContent {
-    display: none;
-    min-height: 100vh;
-    padding: 40px;
-    box-sizing: border-box;
-
-    background-image: url("background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    color: white;
+    display:none;
+    min-height:100vh;
 }
-
+/* Header */
+.header {
+    height:90px;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    padding-left:40px;
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.15);
+    position:relative;
+    z-index:10;
+}
+.header h1 {
+    margin:0;
+    color:#1b4f72;
+    font-size:32px;
+}
+/* Image area */
+.heroImage {
+    height:calc(100vh - 90px);
+    background-image:url("background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+/* Optional overlay text */
+.heroOverlay {
+    padding:40px;
+    color:white;
+    text-shadow:
+        1px 1px 4px black;
+}
 </style>
-
 </head>
-
 <body>
-
+    
+<!-- =========================== -->
+<!--        LOGIN PAGE           -->
+<!-- =========================== -->
+    
 <div id="loginScreen">
-
     <div class="loginBox">
-
-        <h2>Demo Access</h2>
-
-        <p>Please enter the password.</p>
-
+        <h2>
+            Demo Access
+        </h2>
+        <p>
+            Enter the password to continue.
+        </p>
         <input
             id="password"
             type="password"
             placeholder="Password"
-            onkeydown="if(event.key==='Enter')checkPassword();">
-
+            onkeydown="if(event.key==='Enter')checkPassword();"
+        >
         <button onclick="checkPassword()">
             Enter
         </button>
-
         <div id="error"></div>
-
     </div>
-
 </div>
-
-
+    
+<!-- =========================== -->
+<!--         MAIN PAGE           -->
+<!-- =========================== -->
+    
 <div id="mainContent">
-
-    <h1>Webex Contact Center Demo</h1>
-
-    <!-- ==================================================== -->
-    <!--   PASTE THE COMPLETE CISCO WIDGET BELOW THIS LINE     -->
-    <!-- ==================================================== -->
+    <div class="header">
+        <h1>
+            Webex Contact Center Demo
+        </h1>
+    </div>
+    <div class="heroImage">
+        
+        <!-- ================================================= -->
+        <!--         PASTE CISCO LIVECHAT WIDGET HERE          -->
+        <!-- ================================================= -->
 
 <div id="divicw" data-bind="D1DCE870-5692-4C0D-9E39-B496DA80EB9A" data-org="" data-guid="e038ef2c-c768-468c-b515-7396d37b56ed"></div><script>var i={t:function(){try{var e=document.getElementById("divicw"),t=document.createElement("script");t.src="https://media.imi.chat/widget/js/imichatinit.js?t="+new Date().toISOString(),e.insertAdjacentElement("afterend",t),t.addEventListener("load",function(){console.log(new Date().toISOString(),"Livechat script loaded successfully!")}),t.addEventListener("error",function(){console.log(new Date().toISOString(),"Error loading Livechat script");i.o(e)})}catch(e){console.error(e)}},o:function(e){e.insertAdjacentHTML("afterend",'<iframe id="tls_al_frm" frameborder="0" style="overflow:hidden;height:208px;width:394px;position:fixed;display:block;right:48px;bottom:12px;z-index:99999;display:none;"></iframe>');var t=document.getElementById("tls_al_frm"),n=t.contentWindow,d=n.document;d.open();d.write("<!doctype html><html><head><meta charset='utf-8'><title>Untitled Document</title><style>body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#99a0b0;font-size:14px}.popover__content{background-color:#fbfbfe;padding:1.5rem;border-radius:5px;width:300px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.26);position:relative}.popover__message{font-weight:600;color:#56627c;font-size:16px}.pull-left{float:left}.clearfix{clear:both}.hdr-txt{width:218px;margin-top:3px}.para-txt a{text-decoration:none;color:#005cde}.close-btn{position:absolute;right:15px;top:15px}.close-btn a{text-decoration:none;font-weight:400;color:#56627c;font-size:16px}</style></head><body><div class='popover__content'><div class='close-btn'><a href='#' onclick='closeTLSAlert()'>X</a></div><div class='popover__message'><div class='pull-left hdr-txt'>This browser version is not supported on LiveChat.</div></div><div class='clearfix'></div><p class='para-txt'>Please update your browser to the latest version and re-open the website to access the widget.</p></div><script>function closeTLSAlert(){window.parent.postMessage({key:'close_tls_alert',value:'close_tls_alert',action:'close_tls_alert'},'*');}<\/script></body></html>");d.close();t.style.display='block';window.addEventListener('message',function(e){'close_tls_alert'===e.data.action&&i.s()})},s:function(){var e=document.getElementById('tls_al_frm');e&&e.remove()}};i.t();</script>
 
-    <!-- ==================================================== -->
-    <!--   END OF CISCO WIDGET                                -->
-    <!-- ==================================================== -->
-
+        <!-- ================================================= -->
+        <!--           END CISCO LIVECHAT WIDGET CODE          -->
+        <!-- ================================================= -->
+        
+    </div>
 </div>
-
 <script>
-
-const PASSWORD="Demo123!";
-
+const PASSWORD = "Demo123!";
 function checkPassword(){
-
-    if(document.getElementById("password").value===PASSWORD){
+    const entered =
+        document.getElementById("password").value;
+    if(entered === PASSWORD){
         document.getElementById("loginScreen").style.display="none";
         document.getElementById("mainContent").style.display="block";
     }
     else{
-        document.getElementById("error").innerHTML="Incorrect password.";
+        document.getElementById("error").innerHTML =
+            "Incorrect password.";
     }
 }
 </script>
