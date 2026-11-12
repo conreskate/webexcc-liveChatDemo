@@ -213,42 +213,41 @@
         // EVEN / ODD HOUR VISIBILITY
         // ==========================================
 
-        function updateChatWidgetVisibility() {
+function updateChatWidgetVisibility() {
 
-            const mainPage = document.getElementById("mainContent");
+    const mainPage = document.getElementById("mainContent");
 
-            // Never show or load the widget before login.
-            if (mainPage.style.display === "none") {
+    // Never show or load the widget before login.
+    if (mainPage.style.display === "none") {
+        chatContainer.style.display = "none";
+        return;
+    }
 
-                chatContainer.style.display = "none";
+    // Get the current minute.
+    const currentMinute = new Date().getMinutes();
 
-                return;
-            }
+    // Determine which 5-minute interval we're in.
+    const interval = Math.floor(currentMinute / 5);
 
-            // Get the current local hour (0-23).
-            const currentHour = new Date().getHours();
+    if (interval % 2 === 0) {
 
-            console.log("Current hour:", currentHour);
+        // EVEN INTERVAL: SHOW CHAT WIDGET
+        console.log("5-minute visible interval - showing chat widget.");
 
-            if (currentHour % 2 === 0) {
+        chatContainer.style.display = "block";
 
-                // EVEN HOUR: SHOW CHAT WIDGET
-                console.log("Even hour - showing chat widget.");
+        // Load the widget only once.
+        loadImiWidget();
 
-                chatContainer.style.display = "block";
+    } else {
 
-                // Load the widget only once.
-                loadImiWidget();
+        // ODD INTERVAL: HIDE CHAT WIDGET
+        console.log("5-minute hidden interval - hiding chat widget.");
 
-            } else {
+        chatContainer.style.display = "none";
 
-                // ODD HOUR: HIDE CHAT WIDGET
-                console.log("Odd hour - hiding chat widget.");
-
-                chatContainer.style.display = "none";
-
-            }
-        }
+    }
+}
 
 
         // ==========================================
